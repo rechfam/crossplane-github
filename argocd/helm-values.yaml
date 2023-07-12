@@ -10,6 +10,6 @@ server:
     - --insecure
   ingress:
     enabled: true
-    ingressClassName: traefik
+    ingressClassName: nginx
     hosts:
       - argocd.127.0.0.1.nip.io
