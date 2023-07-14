@@ -16,6 +16,8 @@ spec:
       parameters:
         - name: github.repository
           value: new-github-demo
+        - name: github.organisation
+          value: rechfam
         - name: application.name
           value: new-github-demo
         - name: application.host
