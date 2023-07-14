@@ -1,0 +1,34 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: new3-github-demo-repo
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: production
+  source:
+    repoURL: https://github.com/rechfam/crossplane-github
+    targetRevision: HEAD
+    path: chart
+    helm:
+      releaseName: new3-github-demo
+      parameters:
+        - name: github.repository
+          value: new3-github-demo
+        - name: github.organization
+          value: rechfam
+        - name: application.name
+          value: new3-github-demo
+        - name: application.host
+          value: new3-github-demo.acme.com
+        - name: hyperscaler
+          value: aws
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: infra
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
+      allowEmpty: true
