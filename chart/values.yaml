@@ -2,7 +2,7 @@ github:
   organization: rechfam
   repository: crossplane-github-demo
 application:
-  name: my-app
+  name: my-apppp
   host: acme.com
 database:
   version: 14
