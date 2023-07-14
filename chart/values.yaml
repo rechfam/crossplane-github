@@ -1,6 +1,6 @@
 github:
-  organization: devopsparadox
-  repository: my-app
+  organization: rechfam
+  repository: crossplane-github-demo
 application:
   name: my-app
   host: acme.com
